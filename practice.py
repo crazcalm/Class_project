@@ -1,14 +1,25 @@
+import time, sqlite3
 from bs4 import BeautifulSoup             # A web scraping tool
 
 def main():
-	
+	start = time.clock()
 	tags = parse_html_table("Report.html")	
 
 	for count, item in enumerate(data_parser("hudson")):
 		for index,value in enumerate(item[:-1]):
-			print "%s: %s" % (tags[index + 1][0], value)
-		if count ==1:
-			break 
+			pass
+			#print "%s: %s" % (tags[index + 1][0], value)
+		#print "\n\n"
+		#if count ==1000:
+			#break
+	print "\n\nThe list does end..."
+	endtime = time.clock() - start
+	print endtime
+
+def create_db(): #Not finished...
+	tags = parse_html_table("Report.html")
+	conn = sqlite3.connect("example.db')
+	c = conn.cursor()
 		
 
 def parse_html_table(file_name):
