@@ -36,11 +36,11 @@ def test2():
 
 	for index, value in enumerate(c.execute('SELECT first_name, middle_name, last_name, street_number, street_name, city, state, zip_5, zip_4,'
 								+' election_types, election_categories'
-								+'  FROM voters3 WHERE first_name = ? AND election_types LIKE ?', ("MARCUS","%MUN%"))):
+								+'  FROM voters3 WHERE first_name LIKE  ? AND election_types LIKE ?', ("%%","%%"))):
 		print index, value
 
-		if index >= 10:
-			break
+		#if index >= 10:
+		#	break
 
 headers()
 test2()
