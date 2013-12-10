@@ -9,7 +9,11 @@ class Page1(flask.views.MethodView):
 		return flask.render_template("base.html")
 
 	def post(self):
-		return "Page1.post!!!!!!!"
+
+		test = flask.request.form
+		for key, value in test.iteritems():
+			print key, value
+		return "Hello (Page1.post)"
 
 app.add_url_rule("/school", view_func=Page1.as_view("base"), methods=["GET","POST"])
 
