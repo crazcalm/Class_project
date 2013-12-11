@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Voter Data</title>
+		<script type= "text/javascript" src= "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ 
+		{%block head %}
+		<script type = "text/javascript" src = "/static/base.js"> </script>
+		{%endblock%}
+
+	</head>
+
+	<body>
+		
+		<h2>One at a Time</h2>
+
+		<div id= "form">
+			<form action="/school", method="post">
+				
+				<fieldset>
+
+						<legend>Selecting elements</legend>
+						<p>
+							<label>Sex</label>
+							<select name="sex">
+								<option value = "">Don't care</option>
+								<option value = "M">Male</option>
+								<option value = "F">Female</option>
+							</select>
+							
+							<label>Party Code</label>
+							<select name="party_code">
+								<option value = "">Don't care</option>
+								{% for x in legend.party_code %}
+								<p><\p>								
+								<option value = {{x}}> {{x}}</option>
+								{% endfor %}
+							</select> 
+
+														
+							<label>Municipality</label>
+							<select name = "municipality">
+								<option value = "">Don't care</option>
+								{%for x in legend.municipality%}
+								<p></p>
+								<option value={{x}}>{{x}}</option>
+								{%endfor%}
+							</select>								
+						
+							<label>County Precinct</label>
+							<select name = "county">
+								<option value = "">Don't care</option>
+								{%for x in legend.county%}
+								<p></p>
+								<option value={{x}}>{{x}}</option>
+								{%endfor%}
+							</select>
+
+							<label>Ward</label>
+							<select name= "ward">
+								<option value = "">Don't care</option>
+								{%for x in legend.ward%}
+								<p></p>
+								<option value={{x}}>{{x}}</option>
+								{%endfor%}
+							</select>
+
+							<label>District</label>
+							<select name = "district">
+								<option value = "">Don't care</option>
+								{%for x in legend.district%}
+								<p></p>
+								<option value={{x}}>{{x}}</option>
+								{%endfor%}
+							</select>
+
+							<br/>							
+							
+							<label>Election</label>
+							<select name = "election_dates">
+								<option value = "">Don't care</option>
+								{%for x in legend.election%}
+								<p></p>
+								<option value={{x[0]}}>{{x[1]}}</option>
+								{%endfor%}
+							</select>
+						</p>		
+
+				</fieldset>
+				
+				<input type="submit">					
+
+			</form>
+
+		{% block result%}
+		{% endblock%}		
+
+		</div>
+	</body>
+
+
+
+
+
+</html>
