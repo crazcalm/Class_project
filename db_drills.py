@@ -17,10 +17,10 @@ def test(): #works
 def headers(): # works
 	# Prints out the name of the columns
 
-	conn = sqlite3.connect("example.db")
+	conn = sqlite3.connect("voterdb.db")
 	c = conn.cursor()
 
-	for value in c.execute('PRAGMA table_info(voters3)'):
+	for value in c.execute('PRAGMA table_info(m)'):
 		print value[0], value[1]
 
 
@@ -94,5 +94,5 @@ def write_file(result):
 		with open("test.txt", "a") as f:
 			f.write(result)
 	os.chdir(current_dir)
-#headers()
+headers()
 #test2()

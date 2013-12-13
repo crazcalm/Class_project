@@ -16,7 +16,7 @@ congressional=['31','32','33']
 
 year=['2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012']
 
-election_type['MUN','ANS','FIR','SPE','PRI','RUM','GEN','REM']
+election_type=['MUN','ANS','FIR','SPE','PRI','RUM','GEN','REM']
 
 
 # MUN=Municiple
