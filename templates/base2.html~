@@ -94,7 +94,7 @@
 								{%endfor%}
 							</select>
 <br>
-<lable>MUN=Municiple, ANS=Annual School, FIR=Fire, SPE=Special school, PRI=Primary, RUM=Run-off Municiple, GEN=General, REM=Recall Municiple</label>
+<lable>MUN=Municiple, ANS=Annual School, FIR=fire, SPE=Special school, PRI=primary, RUM=Run-off municiple, GEN=General, REM=Recall Municiple</label>
 						</p>		
 
 				</fieldset>

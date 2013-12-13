@@ -1,4 +1,4 @@
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 party_code = ['CMV','REP','RFP','LIB','DEM','UNA','GRE','U','NAT','CON']
 
@@ -17,8 +17,6 @@ congressional=['31','32','33']
 year=['2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012']
 
 election_type['MUN','ANS','FIR','SPE','PRI','RUM','GEN','REM']
-
-
 # MUN=Municiple
 # ANS=Annual School
 # FIR=fire
@@ -28,20 +26,20 @@ election_type['MUN','ANS','FIR','SPE','PRI','RUM','GEN','REM']
 # GEN=General
 # REM=Recall municiple
 
-#def main():
-#	
-#	with open("Report.html", "r") as file:
-#		soup = BeautifulSoup(file)
-#	
-#	test = soup.find_all("tbody", limit = 2)
-#	filter = [str(i) for i in range(10)]
-#	stack = [string.strip() for string in test[1].strings if string.strip()[0] in filter and len(string.strip()) > 9]
-#	
-#	for index, value in enumerate(stack):
-#		tempt = value.split(",", 1)
-#		stack[index] = (tempt[0], tempt[1].strip())
-#	
-#	return stack
-#
-#	
-#election = main()
+def main():
+	
+	with open("Report.html", "r") as file:
+		soup = BeautifulSoup(file)
+	
+	test = soup.find_all("tbody", limit = 2)
+	filter = [str(i) for i in range(10)]
+	stack = [string.strip() for string in test[1].strings if string.strip()[0] in filter and len(string.strip()) > 9]
+	
+	for index, value in enumerate(stack):
+		tempt = value.split(",", 1)
+		stack[index] = (tempt[0], tempt[1].strip())
+	
+	return stack
+
+	
+election = main()
