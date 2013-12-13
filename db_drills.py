@@ -7,11 +7,13 @@ import sqlite3, os
 def test(): #works
 	#You are my model!	
 
-	conn = sqlite3.connect("example.db")
+	conn = sqlite3.connect("voterdb.db")
 	c = conn.cursor()
 
-	for index, value in enumerate(c.execute('SELECT * FROM voters3')):
+	for index, value in enumerate(c.execute('SELECT * FROM voterdb')):
 		print index, value
+		if index >2:
+			break
 
 
 def headers(): # works
@@ -20,7 +22,7 @@ def headers(): # works
 	conn = sqlite3.connect("voterdb.db")
 	c = conn.cursor()
 
-	for value in c.execute('PRAGMA table_info(m)'):
+	for value in c.execute('PRAGMA table_info(voterdb)'):
 		print value[0], value[1]
 
 
@@ -96,3 +98,4 @@ def write_file(result):
 	os.chdir(current_dir)
 headers()
 #test2()
+test()
