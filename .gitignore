@@ -3,5 +3,6 @@
 .pydevproject
 *.pyc
 hudson
+voterdb.db
 example.db
 
